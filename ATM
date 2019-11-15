@@ -1,0 +1,27 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.text.DecimalFormat;
+
+public class ATM {
+    public static void main(String[] args) throws IOException {
+        String currentLine;
+        String[] lineArray; 
+        BufferedReader sc = new BufferedReader(new InputStreamReader(System.in));
+        
+        while((currentLine = sc.readLine()) != null){
+            lineArray = currentLine.split(" ");
+            double fee = 0.5;
+            Double accountWithdraw = Double.parseDouble(lineArray[0]);
+            Double accountBalance = Double.parseDouble(lineArray[1]);
+            Double afterBalance = balance-withdraw-fee;
+           
+            if(afterBalance < 0 || accountWithdraw%5 != 0){            
+                afterBalance = accountBalance;
+            }
+            
+            DecimalFormat money = new DecimalFormat("#.00");
+            System.out.println(money.format(afterBalance));
+        }
+    }
+}
