@@ -1,0 +1,22 @@
+import java.io.*;
+import java.util.*;
+class INTEST {
+    public static void main(String[] args)throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int count = 0;
+        int n = Integer.parseInt(st.nextToken());
+        int k = Integer.parseInt(st.nextToken());
+        if(k<=Math.pow(10,7))
+        {
+            for(int i=1;i<=n;i++) {
+            int x = Integer.parseInt(br.readLine());
+                if(x%k==0&&x<=Math.pow(10,9)) {
+                count++;
+                }
+            }
+        }
+        System.out.print(count);
+    }
+
+}
